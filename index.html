@@ -37,6 +37,21 @@
         <a href="https://lateweb.github.io/visa">Visa</a>
         <a href="https://lateweb.github.io/aiohje">AI-ohje</a>
         <a href="https://lateweb.github.io/laskin">Laskin</a>
+        <a href="https://lateweb.github.io/pdftotxt">PDFtoTXT</a>
     </div>
+
+    <script>
+        (function () {
+            const container = document.querySelector('.container');
+            if (!container) return;
+            const links = Array.from(container.querySelectorAll('a'));
+            // Sort alphabetically by link text (case‑insensitive)
+            links.sort((a, b) =>
+                a.textContent.trim().localeCompare(b.textContent.trim(), undefined, { sensitivity: 'base' })
+            );
+            // Re-append in sorted order (moves the existing DOM nodes)
+            links.forEach(link => container.appendChild(link));
+        })();
+    </script>
 </body>
 </html>
